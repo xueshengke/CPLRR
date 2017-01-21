@@ -1,0 +1,8 @@
+# ignore files except *.fig or *.m
+
+*.m~
+*.mat
+/data
+/figure
+/result
+drawFigures.m
