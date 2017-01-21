@@ -31,7 +31,7 @@ classNum = numel(userName);
 
 % output path
 destDir = cell(classNum, 1);
-destRoot = fullfile(currentPath, 'results', 'ORL') ;
+destRoot = fullfile(currentPath, 'result', 'ORL') ;
 for i = 1 : classNum
     destDir{i} = fullfile(destRoot, userName{i}) ;   
     if ~exist(destDir{i}, 'dir'),   mkdir(destRoot, userName{i}); end

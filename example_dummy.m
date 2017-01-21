@@ -30,7 +30,7 @@ classNum = 1;
 
 % output path
 destDir = cell(classNum, 1);
-destRoot = fullfile(currentPath, 'results', 'dummy') ;
+destRoot = fullfile(currentPath, 'result', 'dummy') ;
 for i = 1 : classNum
     destDir{i} = fullfile(destRoot, userName{i}) ;   
     if ~exist(destDir{i}, 'dir'),   mkdir(destRoot, userName{i}); end

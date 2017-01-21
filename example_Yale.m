@@ -31,7 +31,7 @@ classNum = min(numel(userName), 15); % only select first 15 categories of YaleB
 
 % output path
 destDir = cell(classNum, 1);
-destRoot = fullfile(currentPath, 'results', 'Yale') ;
+destRoot = fullfile(currentPath, 'result', 'Yale') ;
 for i = 1 : classNum
     destDir{i} = fullfile(destRoot, userName{i}) ;   
     if ~exist(destDir{i}, 'dir'),   mkdir(destRoot, userName{i}); end
@@ -54,12 +54,12 @@ para.saveEnd = 1 ;
 para.saveIntermedia = 0 ;
 
 % for windows images
-% para.imageSize = [ 32  28 ];
-% para.coordinate = [ 5  28 ; ...
-%                    15  15 ];
-para.imageSize = [ 64  56 ];
-para.coordinate = [ 9  56 ; ...
-                   30  30 ];
+para.imageSize = [ 32  28 ];
+para.coordinate = [ 5  28 ; ...
+                   15  15 ];
+% para.imageSize = [ 64  56 ];
+% para.coordinate = [ 9  56 ; ...
+%                    30  30 ];
                
 % parametric tranformation model
 para.transformType = 'EUCLIDEAN'; 

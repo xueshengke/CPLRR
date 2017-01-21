@@ -31,7 +31,7 @@ classNum = numel(userName);
 
 % output path
 destDir = cell(classNum, 1);
-destRoot = fullfile(currentPath, 'results', 'COIL') ;
+destRoot = fullfile(currentPath, 'result', 'COIL') ;
 for i = 1 : classNum
     destDir{i} = fullfile(destRoot, userName{i}) ;   
     if ~exist(destDir{i}, 'dir'),   mkdir(destRoot, userName{i}); end
@@ -41,7 +41,7 @@ end
 trainMode = 0;
 testMode = 0;
 
-trainMode = 1;
+% trainMode = 1;
 testMode = 1;
 
 % dispaly flag
@@ -149,7 +149,7 @@ testTimeElapsed = 0;
 if testMode
 fprintf('begin test ---------------\n');
 tic
-[accuracy, overall] = projection_predict(testImages, testTransform, para, destRoot, destDir);
+[accuracy, overall] = projection_predict(testImages, testTransform, para, destDir);
 fprintf('classification result: %.4f\n', accuracy);
 fprintf('overall accuracy: %.4f\n', overall);
 fprintf('test completes!\n');

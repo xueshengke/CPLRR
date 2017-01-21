@@ -72,6 +72,12 @@ for i = 1 : ceil(totalNum / 100)
     batchImages = reshape(batchImages, [prod(imgSize) numImages]);
     plabel = zeros(classNum, numImages);  
 
+    if para.DISPLAY
+        figure;
+        xI = ceil(sqrt(classNum));
+        yI = ceil(classNum / xI);
+    end
+    
     for k = 1 : classNum
         Z = actv(W{k} * batchImages);
         minZ = repmat(min(Z), [size(Z, 1) 1]);
@@ -81,9 +87,6 @@ for i = 1 : ceil(totalNum / 100)
         plabel(k, :) = sum(abs(err));
         
         if para.DISPLAY
-            figure;
-            xI = ceil(sqrt(classNum));
-            yI = ceil(classNum / xI);
             subplot(2*xI, yI, k);
             grid_plot(Z, size(Z,2), [imgSize(1) imgSize(2)]); title('activation');
             subplot(2*xI, yI, k+xI*yI); 
