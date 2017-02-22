@@ -41,7 +41,7 @@ end
 trainMode = 0;
 testMode = 0;
 
-% trainMode = 1;
+trainMode = 1;
 testMode = 1;
 
 % dispaly flag
@@ -54,15 +54,18 @@ para.saveEnd = 1 ;
 para.saveIntermedia = 0 ;
 
 % for windows images
-para.imageSize = [ 32  32 ];
-para.coordinate = [ 5  28 ; ...
-                   17  17 ];
-
+% para.imageSize = [ 32  32 ];
+% para.coordinate = [ 5  28 ; ...
+%                    17  17 ];
+para.imageSize = [ 128  128 ];
+para.coordinate = [ 17  112 ; ...
+                   65  65 ];
+               
 % parametric tranformation model
 para.transformType = 'EUCLIDEAN'; 
 % one of 'TRANSLATION', 'EUCLIDEAN', 'SIMILARITY', 'AFFINE','HOMOGRAPHY'
 
-para.numScales = 1 ; % if numScales > 1, we use multiscales
+para.numScales = 2 ; % if numScales > 1, we use multiscales
 
 % main loop in RASL
 para.outer_tolerance = 1e-2; % stop iteration threshold

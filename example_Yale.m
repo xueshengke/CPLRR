@@ -60,7 +60,8 @@ para.coordinate = [ 5  28 ; ...
 % para.imageSize = [ 64  56 ];
 % para.coordinate = [ 9  56 ; ...
 %                    30  30 ];
-               
+
+
 % parametric tranformation model
 para.transformType = 'EUCLIDEAN'; 
 % one of 'TRANSLATION', 'EUCLIDEAN', 'SIMILARITY', 'AFFINE','HOMOGRAPHY'

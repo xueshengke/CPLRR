@@ -98,8 +98,8 @@ for scaleIndex = para.numScales : -1 : 1
 
     % compute the transformations from last scale images 
     for i = 1 : numImages           
-        if scaleIdx == para.numScales
-            T_in{i} = T_ds_hom^(scaleIdx-1)*transformations{i}*inv(T_ds_hom^(scaleIdx-1)) ;
+        if scaleIndex == para.numScales
+            T_in{i} = T_ds_hom^(scaleIndex-1)*transformations{i}*inv(T_ds_hom^(scaleIndex-1)) ;
         else
             T_in{i} = inv(T_ds_hom)*T_in{i}*T_ds_hom ;
         end       
@@ -113,14 +113,14 @@ for scaleIndex = para.numScales : -1 : 1
         
         Dt = zeros(imgSize(1)*imgSize(2), numImages);
         Jaco = cell(numImages, 1) ;
-        disp(['scale ' num2str(scaleIdx) ', iter ' num2str(iterNum)]) ;
+        disp(['scale ' num2str(scaleIndex) ', iter ' num2str(iterNum)]) ;
         
         for i = 1 : numImages
             % transformed image and derivatives 
             Tfm = fliptform(maketform('projective',T_in{i}'));            
-            y   = vec(imtransform(I0{scaleIdx, i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
-            Iu  = vec(imtransform(I0x{scaleIdx,i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
-            Iv  = vec(imtransform(I0y{scaleIdx,i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
+            y   = vec(imtransform(I0{scaleIndex, i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
+            Iu  = vec(imtransform(I0x{scaleIndex,i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
+            Iv  = vec(imtransform(I0y{scaleIndex,i}, Tfm, 'bicubic', 'XData', [1 imgSize(2)], 'YData', [1 imgSize(1)], 'Size', imgSize));
 
             Iu = (1/norm(y))*Iu - ( (y'*Iu)/(norm(y))^3 )*y ;
             Iv = (1/norm(y))*Iv - ( (y'*Iv)/(norm(y))^3 )*y ;
