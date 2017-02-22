@@ -80,7 +80,7 @@ para.classNum = classNum;
 
 para.noise_ratio = 0.0;   % 0, 0.1, 0.2, 0.3
 para.alpha = 0.9;         % momentum
-para.gamma = 3;           % 5, 15, 25, 35
+para.gamma = 5;           % 5, 15, 25, 35
 para.beta = 10;           % equal to the number of class 
 para.lr = [1e-2, 1e-3, 1e-4, 1e-5];
 para.proj_threshold = 1e-4;

@@ -81,13 +81,14 @@ while ~converged
     vW = alpha * vW + eta * dW;
     W = W - vW;
     
-%     tempB = 0;
-%     for i = 1 : classNum
-%         tempB = tempB + indicator(idx,i,beta) * dF{i} .* (F{i} - A{idx}) ;  
-%     end
-%     dB = tempB + gamma * B;
-%     vB = alpha * vB + eta * dB;
-%     B = B - vB;
+    tempB = 0;
+    for i = 1 : classNum
+        tempB = tempB + indicator(idx,i,beta) * dF{i} .* (F{i} - A{idx}) ; 
+    end
+    tempB = repmat(mean(tempB,2), [1, size(tempB,2)]);
+    dB = tempB + gamma * B;
+    vB = alpha * vB + eta * dB;
+    B = B - vB;
     
     for i = 1: classNum
         F{i}  = actv(W * D{i} + B);

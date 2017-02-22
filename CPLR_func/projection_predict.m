@@ -54,9 +54,9 @@ A = cell(classNum, 1);
 for i = 1 : classNum
     strc = load(fullfile(destDir{i}, 'projection.mat'), 'W', 'B');
     W{i} = strc.W;
-%     B{i} = strc.B;
-%     B{i} = mean(B{i}, 2);
-%     B{i} = B{i} / max(B{i});
+    B{i} = strc.B;
+    B{i} = mean(B{i}, 2);
+    B{i} = B{i} / max(B{i});
     strc = load(fullfile(destDir{i}, 'final.mat'), 'A');
     Am = mean(strc.A, 2);
     A{i} = Am / max(Am);    
@@ -79,7 +79,7 @@ for i = 1 : ceil(totalNum / 100)
     end
     
     for k = 1 : classNum
-        Z = actv(W{k} * batchImages);
+        Z = actv(W{k} * batchImages + repmat(B{k}, [1, size(batchImages,2)]));
         minZ = repmat(min(Z), [size(Z, 1) 1]);
         maxZ = repmat(max(Z), [size(Z, 1) 1]);
         Z = (Z - minZ) ./ (maxZ - minZ);
