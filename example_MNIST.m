@@ -158,6 +158,8 @@ testTimeElapsed = toc
 outputFileName = fullfile(destRoot, 'mnist_parameters.txt'); 
 fid = fopen(outputFileName, 'a') ;
 fprintf(fid, '****** %s ******\n', datestr(now,0));
+fprintf(fid, '%s\n', ['image size: '  num2str(para.imageSize(1)) ' x ' num2str(para.imageSize(2)) ]);
+fprintf(fid, '%s\n', ['image class: '     num2str(para.classNum)     ]);
 fprintf(fid, '%s\n', ['train number: '    num2str(para.trainImageNum)]);
 fprintf(fid, '%s\n', ['test number: '     num2str(para.testImageNum) ]);
 fprintf(fid, '%s\n', ['RASL time: '       num2str(raslTimeElapsed)   ]);
