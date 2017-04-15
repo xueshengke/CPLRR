@@ -11,11 +11,12 @@ Peng, Y., et al., RASL, IEEE Trans. on PAMI, 2012.
 You may start an example by directly running 'example_*.m' for various datasets.
 |--------------
 |-- example_COIL.m
-|-- example_dummy.m       figure 1 in our paper
+|-- example_dummy.m       figure 2 in our paper
 |-- example_GTF.m
-|-- example_MNIST.m       figure 2 in our paper
+|-- example_MNIST.m       figure 3, Table 1 in our paper
 |-- example_ORL.m
-|-- example_Yale.m        figure 3,4 in our paper
+|-- example_ORL.m         figure 6, 7 in our paper
+|-- example_Yale.m        figure 4, 5 in our paper
 |-------------
 
 The code contains:
@@ -38,12 +39,12 @@ Note that, our code adopts the inexact augmented Lagrange multiplier (ALM)
 method and the gradient descent method with momentum (GDM) throughout this 
 CPLRR implementation.
 
-For algorithm details, please read our paper, in which we explain more details.
+For algorithm details, please read our paper, in which we interpret more details.
 
 If you have any questions about this implementation, please do not hesitate to contact us. 
 
 Xue Shengke, 
 College of Information Science and Electronic Engineering,
-Zhejiang University, P. R. China
+Zhejiang University, P. R. China,
 e-mail: (either one is o.k.)
-xueshengke@zju.edu.cn, or xueshengke1993@gmail.com
+xueshengke@zju.edu.cn, or xueshengke1993@gmail.com.
