@@ -2,7 +2,8 @@ This code includes the detailed implementation of the paper:
 
 Reference:
 Shengke Xue, Xinyu Jin, "Robust Classwise and Projective Low-Rank Representation 
-for Image Classification", Signal, Image and Video Processing, 2017, in press.
+for Image Classification", Signal, Image and Video Processing, 2018, 12(1):107-115. 
+DOI 10.1007/s11760-017-1136-1
 
 It is partially composed of RASL code implementation,
 Reference:
